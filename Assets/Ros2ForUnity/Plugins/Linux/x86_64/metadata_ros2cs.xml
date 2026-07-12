@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ros2cs>
+  <ros2>jazzy</ros2>
+  <standalone>0</standalone>
+</ros2cs>

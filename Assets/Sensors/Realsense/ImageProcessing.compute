@@ -1,0 +1,18 @@
+#pragma kernel CSMain
+
+// 入力と出力のテクスチャ
+Texture2D<float4> Source;
+RWTexture2D<float4> Result;
+
+// テクスチャの幅と高さ
+int Width;
+int Height;
+
+[numthreads(8, 8, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= Width || id.y >= Height) return;
+
+    float4 color = Source[id.xy];
+    Result[id.xy] = color; // テクスチャへ書き出す（RGBA）
+}
